@@ -15,4 +15,12 @@ This project, the setup and configuration of a Linux web server, was developed a
 
 * The Lightsail firewall was configured to allow the SSH port change.
 
-* The server firewall (UFW) was enabled (following configuration) to only allow incoming requests for SSH (port 2200), HTTP (port 80), and NTP (port 123). Again, the Lightsail firewall was adjusted accordingly.
+* The server firewall (UFW) was enabled (following configuration) to only allow incoming requests for SSH (port 2200), HTTP (port 80), and NTP (port 123). To accomplish this, the following commands were entered at the server terminal (after confirming that the UFW was disabled by running ```sudo ufw status```):
+    1. ```sudo ufw default deny incoming```
+    2. ```sudo ufw default allow outgoing```
+    3. ```sudo ufw allow 2200/tcp```
+    4. ```sudo ufw allow www```
+    5. ```sudo ufw allow ntp```
+    6. ```sudo ufw enable```
+
+* Again, the Lightsail firewall was adjusted accordingly.
