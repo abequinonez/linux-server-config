@@ -24,3 +24,27 @@ This project, the setup and configuration of a Linux web server, was developed a
     6. ```sudo ufw enable```
 
 * Again, the Lightsail firewall was adjusted accordingly.
+
+#### User Management
+* Key-based SSH authentication is enforced since password login is disabled by default on the Lightsail Ubuntu instance. This was verified by checking the ```/etc/ssh/sshd_config``` file.
+
+* Remote login of the root user was disabled. This was accomplished by making the appropriate change in ```/etc/ssh/sshd_config```. Again, after making any changes to this file, the SSH service was restarted by running the command ```sudo service ssh restart```.
+
+* A new user account named ```grader``` was created using the command ```sudo adduser grader```.
+
+* In order to login, an SSH key pair was generated for the ```grader``` user. To complete the process, the following steps were taken:
+    1. Created a ```.ssh``` directory: ```sudo mkdir /home/grader/.ssh```
+    2. Created an ```authorized_keys``` file to contain the user's public key obtained from the SSH key pair generation: ```sudo touch /home/grader/.ssh/authorized_keys```
+    3. Copied and pasted the public key into the ```authorized_keys``` file.
+
+* File permissions, owner, and group were changed on the ```grader``` user's ```.ssh``` directory and ```authorized_keys``` file. The following commands were run:
+    1. ```sudo chmod 700 /home/grader/.ssh```
+    2. ```sudo chmod 600 /home/grader/.ssh/authorized_keys```
+    3. ```sudo chown grader /home/grader/.ssh```
+    4. ```sudo chgrp grader /home/grader/.ssh```
+    5. ```sudo chown grader /home/grader/.ssh/authorized_keys```
+    6. ```sudo chgrp grader /home/grader/.ssh/authorized_keys```
+
+* The ```grader``` user was given sudo access by completing the following steps:
+    1. Created a ```grader``` file in the ```/etc/sudoers.d``` directory: ```sudo touch /etc/sudoers.d/grader```
+    2. Added the following contents to the ```grader``` file: ```grader ALL=(ALL) NOPASSWD:ALL```
