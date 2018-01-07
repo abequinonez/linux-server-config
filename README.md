@@ -96,3 +96,15 @@ This project, the setup and configuration of a Linux web server, was developed a
 * sqlalchemy
 * oauth2client
 * psycopg2
+
+## Helpful Resources
+
+* https://askubuntu.com/questions/449032/29-packages-can-be-updated-how
+* https://www.godaddy.com/help/changing-the-ssh-port-for-your-linux-server-7306
+* https://mediatemple.net/community/products/dv/204643810/how-do-i-disable-ssh-login-for-the-root-user
+* https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
+* https://www.digitalocean.com/community/tutorials/how-to-secure-postgresql-on-an-ubuntu-vps
+* https://www.digitalocean.com/community/tutorials/how-to-set-up-time-synchronization-on-ubuntu-16-04
+* http://flask.pocoo.org/docs/0.12/deploying/mod_wsgi
+* https://jackhalpinblog.wordpress.com/2016/08/27/getting-your-python-3-flask-app-to-run-on-apache
+* https://www.jakowicz.com/flask-apache-wsgi
