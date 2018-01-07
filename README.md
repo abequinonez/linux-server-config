@@ -48,3 +48,34 @@ This project, the setup and configuration of a Linux web server, was developed a
 * The ```grader``` user was given sudo access by completing the following steps:
     1. Created a ```grader``` file in the ```/etc/sudoers.d``` directory: ```sudo touch /etc/sudoers.d/grader```
     2. Added the following contents to the ```grader``` file: ```grader ALL=(ALL) NOPASSWD:ALL```
+
+#### Web Server
+* The local timezone was verified to be set to UTC (with NTP synchronization) by running the command ```timedatectl```.
+
+* The Apache HTTP Server was installed using the command ```sudo apt-get install apache2```.
+
+* The Apache application handler mod_wsgi was installed. Since the Item Catalog project was built with Python 3, the Python 3 mod_wsgi package was chosen. The package was installed by running the command ```sudo apt-get install libapache2-mod-wsgi-py3```.
+
+* The Apache server was configured to handle requests using the WSGI module. This was done by adding the line ```WSGIScriptAlias / /var/www/html/catalog/app.wsgi``` to the ```/etc/apache2/sites-enabled/000-default.conf``` file. Apache was then restarted using the command ```sudo apache2ctl restart```.
+
+* PostgreSQL was installed using the command ```sudo apt-get install postgresql```.
+
+* Remote connections to PostgreSQL are disabled by default. This was verified by checking the ```/etc/postgresql/9.5/main/pg_hba.conf``` file.
+
+* A new database user named ```catalog``` was created with limited permissions. This was accomplished by running the command ```sudo -u postgres createuser --interactive```.
+
+* A new database, ```catalog```, was created using the command ```sudo -u postgres createdb catalog```.
+
+* Using Git, which was installed by default on the Lightsail Ubuntu instance, the Item Catalog project was cloned. This was done by running the command ```sudo git clone https://github.com/abequinonez/udacity-item-catalog.git /var/www/html/catalog```.
+
+* pip3, the Python 3 package manager, was installed using the command ```sudo apt-get install python3-pip```.
+
+* In order to run the Item Catalog project, it was necessary to install a few Python packages using the following commands:
+    1. ```sudo pip3 install flask```
+    2. ```sudo pip3 install sqlalchemy```
+    3. ```sudo pip3 install oauth2client```
+    4. ```sudo pip3 install psycopg2```
+
+* The Item Catalog project was configured to connect to the PostgreSQL database.
+
+* Both the Apache server and the Item Catalog project were configured to work with each other.
