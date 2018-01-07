@@ -2,6 +2,12 @@
 
 This project, the setup and configuration of a Linux web server, was developed as part of the Udacity Full Stack Web Developer Nanodegree Program. The server was created as an Ubuntu Linux instance on Amazon Lightsail. Following the project guidelines, the server was secured and configured to host a web application complete with a database server.
 
+## Connection Info
+
+* IP Address: 52.32.92.198
+* SSH Port: 2200
+* App URL: http://ec2-52-32-92-198.us-west-2.compute.amazonaws.com
+
 ## Configuration Summary
 
 #### General Security
