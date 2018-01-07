@@ -79,3 +79,17 @@ This project, the setup and configuration of a Linux web server, was developed a
 * The Item Catalog project was configured to connect to the PostgreSQL database.
 
 * Both the Apache server and the Item Catalog project were configured to work with each other.
+
+## Software Installed
+
+* Apache HTTP Server (apache2)
+* Python 3 Apache WSGI Module (libapache2-mod-wsgi-py3)
+* PostgreSQL (postgresql)
+* Python 3 Package Manager (python3-pip)
+
+## Python Packages Installed
+
+* flask
+* sqlalchemy
+* oauth2client
+* psycopg2
