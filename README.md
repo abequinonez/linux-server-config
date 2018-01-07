@@ -5,6 +5,7 @@ This project, the setup and configuration of a Linux web server, was developed a
 ## Configuration Summary
 
 #### General Security
+
 * All installed packages were updated to most recent versions. The following commands were entered at the server terminal:
     1. ```sudo apt-get update```
     2. ```sudo apt-get upgrade```
@@ -26,6 +27,7 @@ This project, the setup and configuration of a Linux web server, was developed a
 * Again, the Lightsail firewall was adjusted accordingly.
 
 #### User Management
+
 * Key-based SSH authentication is enforced since password login is disabled by default on the Lightsail Ubuntu instance. This was verified by checking the ```/etc/ssh/sshd_config``` file.
 
 * Remote login of the root user was disabled. This was accomplished by making the appropriate change in ```/etc/ssh/sshd_config```. Again, after making any changes to this file, the SSH service was restarted by running the command ```sudo service ssh restart```.
@@ -50,6 +52,7 @@ This project, the setup and configuration of a Linux web server, was developed a
     2. Added the following contents to the ```grader``` file: ```grader ALL=(ALL) NOPASSWD:ALL```
 
 #### Web Server
+
 * The local timezone was verified to be set to UTC (with NTP synchronization) by running the command ```timedatectl```.
 
 * The Apache HTTP Server was installed using the command ```sudo apt-get install apache2```.
