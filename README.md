@@ -6,8 +6,8 @@ This project, the setup and configuration of a Linux web server, was developed a
 
 ## Connection Info
 
-* IP Address: ~~52.32.92.198~~
-* SSH Port: ~~2200~~
+* IP Address: ~~`52.32.92.198`~~
+* SSH Port: ~~`2200`~~
 * App URL: ~~`http://ec2-52-32-92-198.us-west-2.compute.amazonaws.com`~~
 
 ## Configuration Summary
